@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang=fr>
+ <head>
+  <meta charset='utf-8' />
+  <meta name="Author" content="alain marty" />
+  <meta name="Copyright" content="copyleft, GNU GPL" />
+  <title>foo</title>
+  <script src='foo.js'></script>
+ </head>
+ <body>
+<h1>foo</h1>
+<p>Alain Marty 2016/02/14</p>
+<p> Let's consider the heart of <a href="http://epsilonwiki.free.fr/alphawiki_2/">lambdatalk</a> in this tiny subset of 20 lines of JS code with a very minimal set of 5 primitives, {code [+,-,*,/,sqrt]} without any {code def lambda if} functions. You can evaluate nested expressions like the followings:
+<textarea id = "input" style="width:99%; height:100px;">
+(+ 1 2 3 4 5 6)
+(* 1 2 3 4 5 6)
+(sqrt (+ (* 3 3) (* 4 4)))
+(sqrt 2)
+(/ (+ 1 (sqrt 5)) 2)
+</textarea>
+<input type = "button" value = "eval" onclick = "document.getElementById('output').innerHTML = FOO.eval( document.getElementById('input').value )"/>
+<pre id="output" style="border:1px solid grey; min-height:100px;"></pre>
+</body>
+</html>
