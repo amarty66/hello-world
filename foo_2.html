@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang=fr>
+ <head>
+  <meta charset='utf-8' />
+  <meta name="Author" content="alain marty" />
+  <meta name="Copyright" content="copyleft, GNU GPL" />
+  <title>foo_2</title>
+  <script src='foo_2.js'></script>
+  <script>
+    function foo_eval() {
+      var input = document.getElementById('foo_input').value;
+      var output = FOO_2.eval( input ); 
+      document.getElementById('foo_infos').innerHTML = '(' 
+        + output.bal.left + '|' 
+        + output.bal.right + ') time: ' 
+        + output.time + 'ms';
+      if (output.bal.left === output.bal.right)
+      document.getElementById('foo_output').innerHTML = output.val;
+    }
+  </script>
+ </head>
+ <body>
+<h1>foo<sup>2</sup></h1>
+<p>Alain Marty 2016/02/14</p>
+<p> Beyond the 20 lines of <a href="http://epsilonwiki.free.fr/alphawiki_2/?view=foo">FOO</a>, this is FOO<sup>2</sup> with about 200 lines of plain JS code,  coming with 14 primitives <code>[lib eval apply = &lt; + - * / sqrt equal? cons car cdr]</code> and 3 special forms <code>[def lambda if]</code>.
+More informations can be seen in <a href="http://epsilonwiki.free.fr/alphawiki_2/index.php?view=foo_2">FOO</a><sup>2</sup>.</p> 
+
+<textarea id="foo_input" style="width:99%; height:300px;" onkeyup="foo_eval()">
+((lambda (a e) Happy New Year) aaaAaaa eeiiiee)
+
+(def hypo 
+ (lambda (:a :b) 
+  (sqrt (+ (* :a :a) (* :b :b)))))
+(hypo 3 4)
+(hypo 1 1) 
+
+(def fac 
+ (lambda (:n) 
+  (if (< :n 1) 
+   then 1 
+   else (* :n (fac (- :n 1)))
+)))
+(fac 6)
+(fac 21)
+
+(lib)
+</textarea>
+
+<p> Edit something in the frame editor to see some result:</p>
+
+<center  id="foo_infos"></center>
+
+<pre id="foo_output" style="white-space:pre-wrap; border:1px solid grey; min-height:200px;"></pre>
+<p> Next step here: <a href="http://epsilonwiki.free.fr/alphawiki_2/">alphawiki</a> ...</p>
+
+</body>
+</html>
